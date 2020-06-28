@@ -1,5 +1,12 @@
 const _ = require('lodash');
 
+/**
+ *
+ * @param {Array} data Array containing the latest tweets of an user
+ * @returns {Object} an object that contains an user information and latest tweets info
+ * @returns {Object} object.user user info
+ * @returns {Array} object.tweets latest tweest with info that we need
+ */
 function filterData(data) {
   // we just need to return one user object instead of one for every tweet (default)
   let user = {};

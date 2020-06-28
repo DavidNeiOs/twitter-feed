@@ -1,0 +1,1 @@
+export const ADD_CANDIDATE_DATA = 'ADD_CANDIDATE_DATA';
