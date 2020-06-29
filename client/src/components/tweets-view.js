@@ -14,7 +14,6 @@ const TweetView = (props) => {
     fetch(`http://localhost:3000/api/tweets/${props.handle}`)
       .then((result) => result.json())
       .then((res) => {
-        console.log(res);
         setResponse(res);
       })
       .catch((err) => console.log(err));
@@ -27,7 +26,11 @@ const TweetView = (props) => {
   }, [response]);
 
   return (
-    <>
+    <div
+      className={
+        props.currentCandidate === props.handle ? 'visible' : 'not_visible'
+      }
+    >
       {isLoading ? (
         <div>Loading</div>
       ) : (
@@ -53,13 +56,13 @@ const TweetView = (props) => {
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 };
 
 function mapStateToProps(state) {
   return {
-    users: state.users,
+    currentCandidate: state.visible.visible,
   };
 }
 

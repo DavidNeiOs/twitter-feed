@@ -1,7 +1,7 @@
 import React from 'react';
 import { isNil } from 'lodash';
 import {
-  IoIosSwap,
+  IoIosRepeat,
   IoIosQuote,
   IoLogoTwitter,
   IoIosHeart,
@@ -15,7 +15,7 @@ export const TweetCard = (props) => {
   let Icon;
   switch (info.action) {
     case RETWEET:
-      Icon = IoIosSwap;
+      Icon = IoIosRepeat;
       break;
     case QUOTE:
       Icon = IoIosQuote;
@@ -30,7 +30,11 @@ export const TweetCard = (props) => {
         <div className='tweet_card_header_info'>
           <Icon /> <span>{info.description}</span>
         </div>
-        <a href={props.url} className='tweet_card_header_button'>
+        <a
+          href={props.url}
+          className='tweet_card_header_button'
+          target='_blank'
+        >
           See tweet
         </a>
       </div>
@@ -40,7 +44,7 @@ export const TweetCard = (props) => {
       </p>
       <div className='tweet_extra_info'>
         <div className='tweet_retweets'>
-          <IoIosSwap color='green' />
+          <IoIosRepeat color='green' />
           {props.retweets}
         </div>
         <div className='tweet_favorites'>

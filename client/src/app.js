@@ -4,6 +4,7 @@ import './app.css';
 
 import store from './store';
 import TweetsView from './components/tweets-view';
+import ToggleCandidate from './components/toggle-candidate';
 
 const App = () => {
   return (
@@ -11,6 +12,9 @@ const App = () => {
       <div className='background'>
         <div className='container'>
           <h1 className='title'>Political tweets</h1>
+          <div>
+            <ToggleCandidate />
+          </div>
           <div className='feed_container'>
             <TweetsView handle='HillaryClinton' />
             <TweetsView handle='realDonaldTrump' />
