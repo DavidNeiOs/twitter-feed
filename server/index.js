@@ -17,24 +17,24 @@ var T = new Twit({
   access_token_secret: twitterConstants.accessTokenSecret,
 });
 
-T.get(
-  'statuses/user_timeline',
-  { screen_name: 'HillaryClinton', count: 10 },
-  function (err, data, response) {
+//Routes will go here
+app.get('/api/tweets/:handle', (req, res) => {
+  const { handle } = req.params;
+
+  T.get('statuses/user_timeline', { screen_name: handle, count: 10 }, function (
+    err,
+    data,
+    response
+  ) {
     if (err) {
       console.log(err);
+      res.status(500).send({ success: false });
       return;
     }
     // do something with data here
-  }
-);
-
-//Routes will go here
-app.get('/api/hello', (req, res) => {
-  console.log('ping');
-  res.status(200).send({
-    success: true,
-    message: 'Hello world',
+    res
+      .status(200)
+      .send({ success: true, data: twitterUtils.filterData(data) });
   });
 });
 

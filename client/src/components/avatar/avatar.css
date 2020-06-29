@@ -1,0 +1,18 @@
+.avatar_container {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  .avatar_container {
+    height: 120px;
+    width: 120px;
+  }
+}

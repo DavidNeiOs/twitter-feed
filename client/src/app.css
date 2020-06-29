@@ -1,5 +1,6 @@
 html {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -23,6 +24,9 @@ html {
 
 .title {
   text-align: center;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid gray;
 }
 
 .feed_container {
@@ -30,6 +34,29 @@ html {
   flex-direction: column;
 }
 
+.feed_container > div {
+  width: 100%;
+}
+
 .candidate_feed {
   width: 100%;
+}
+
+.tweets_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tweet_view {
+  padding: 12px 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .feed_container {
+    flex-direction: row;
+  }
+  .feed_container > div {
+    width: 50%;
+  }
 }

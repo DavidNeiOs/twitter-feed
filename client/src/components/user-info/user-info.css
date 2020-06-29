@@ -1,0 +1,35 @@
+.user_data_container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.user_data{
+  margin-top: 12px;
+}
+
+.user_data_name{
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.user_data p {
+  color: #a9a9a9;
+}
+
+.user_data p:not(:last-child) {
+  margin-bottom: 4px;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .user_data_container {
+    padding-left: 10%;
+    padding-right: 10%;
+    min-height: 335px;
+  }
+}
