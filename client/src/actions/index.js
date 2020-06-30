@@ -1,4 +1,13 @@
-import { ADD_CANDIDATE_DATA, TOGGLE_CANDIDATE } from './actionTypes';
+import {
+  ADD_CANDIDATE_DATA,
+  TOGGLE_CANDIDATE,
+  FETCH_CANDIDATE_DATA,
+} from './actionTypes';
+
+export const fetchCandidateData = (candidate) => ({
+  type: FETCH_CANDIDATE_DATA,
+  candidate,
+});
 
 export const addCandidateData = (data) => ({
   type: ADD_CANDIDATE_DATA,

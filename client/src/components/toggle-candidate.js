@@ -35,7 +35,7 @@ const ToggleCandidate = (props) => {
         }}
         onClick={handleClick}
       >
-        <IoIosSwap /> Switch View
+        <IoIosSwap style={{ verticalAlign: 'middle' }} /> Switch View
       </button>
     </div>
   );

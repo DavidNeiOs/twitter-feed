@@ -11,10 +11,10 @@ export default function (state = initialState, action) {
       const { user, tweets } = action.payload;
       return {
         ...state,
-        handleNames: [state.handleNames, user.screen_name],
+        handleNames: [...state.handleNames, user.screen_name],
         byHandle: {
           ...state.byHandle,
-          [user.screen_name]: tweets,
+          [user.screen_name]: { user, tweets },
         },
       };
     default:

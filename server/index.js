@@ -17,7 +17,6 @@ var T = new Twit({
   access_token_secret: twitterConstants.accessTokenSecret,
 });
 
-//Routes will go here
 app.get('/api/tweets/:handle', (req, res) => {
   const { handle } = req.params;
 
@@ -31,7 +30,7 @@ app.get('/api/tweets/:handle', (req, res) => {
       res.status(500).send({ success: false });
       return;
     }
-    // do something with data here
+
     res
       .status(200)
       .send({ success: true, data: twitterUtils.filterData(data) });
