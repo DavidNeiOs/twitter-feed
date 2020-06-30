@@ -20,7 +20,7 @@ const TweetView = (props) => {
       }
     >
       {!props.candidate ? (
-        <div>Loading</div>
+        <div style={{ textAlign: 'center' }}>Loading</div>
       ) : (
         <div className='tweet_view'>
           <UserInfo user={props.candidate.user} />
